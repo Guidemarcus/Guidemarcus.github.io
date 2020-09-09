@@ -13,11 +13,13 @@
     <button type="button" onclick="javascript: invokeCSCode();">Invoke C# Code</button>
     <br />
     <p id="result">Result:</p>
+    <p id="resultShown">waiting</p>
     <script type="text/javascript">
 
         function invokeCSCode() {
             try {
                 console.log("Sending Data:");
+                document.getElementById("resultShown").innerHTML = "Success!";
                 invokeCSharpAction();
             }
             catch (err) {
