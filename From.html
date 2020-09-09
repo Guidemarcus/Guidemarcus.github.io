@@ -8,17 +8,20 @@
     <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
     <h1>HybridWebView Test</h1>
     <br />
+    Enter name: <input type="text" id="name">
     <br />
-    <button type="button" onclick="javascript: Navigation();">Navigate</button>
+    <br />
+    <button type="button" onclick="javascript: invokeCSCode($('#name').val());">Invoke C# Code</button>
     <br />
     <p id="result">Result:</p>
-    <p id="resultNavigation">navigation waiting</p>
+    <p id="resultShown">waiting</p>
     <script type="text/javascript">
 
-        function Navigation() {
+        function invokeCSCode(data) {
             try {
-                document.getElementById("resultNavigation").innerHTML = "Navigation Success!";
-                window.location.href = 'From.html';
+                console.log("Sending Data:");
+                document.getElementById("resultShown").innerHTML = "Success! " + data;
+                invokeCSharpAction(data);
             }
             catch (err) {
                 console.log(err);
