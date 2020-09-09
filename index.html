@@ -18,6 +18,7 @@
     <br />
     <p id="result">Result:</p>
     <p id="resultShown">waiting</p>
+    <p id="resultNavigation">navigation waiting</p>
     <script type="text/javascript">
 
         function invokeCSCode(data) {
@@ -33,7 +34,8 @@
 
         function Navigation() {
             try {
-                window.location.href = 'https://suicide-ca-uat-as.azurewebsites.net/fr/mes-outils';
+                document.getElementById("resultNavigation").innerHTML = "Navigation Success!";
+                window.location.href = 'https://guidemarcus.github.io/';
             }
             catch (err) {
                 console.log(err);
