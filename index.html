@@ -13,6 +13,9 @@
     <br />
     <button type="button" onclick="javascript: invokeCSCode($('#name').val());">Invoke C# Code</button>
     <br />
+    <br />
+    <button type="button" onclick="javascript: Navigation();">Navigate</button>
+    <br />
     <p id="result">Result:</p>
     <p id="resultShown">waiting</p>
     <script type="text/javascript">
@@ -26,6 +29,16 @@
             catch (err) {
                 console.log(err);
             }
-        }</script>
+        }
+
+        function Navigation() {
+            try {
+                window.location.href = 'https://suicide-ca-uat-as.azurewebsites.net/fr/mes-outils';
+            }
+            catch (err) {
+                console.log(err);
+            }
+        }
+    </script>
 </body>
 </html>
