@@ -1,1 +1,31 @@
-Hello World
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Page Title</title>
+</head>
+<body>
+    <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <h1>HybridWebView Test</h1>
+    <br />
+    Enter name: <input type="text" id="name">
+    <br />
+    <br />
+    <button type="button" onclick="javascript: invokeCSCode();">Invoke C# Code</button>
+    <br />
+    <p id="result">Result:</p>
+    <script type="text/javascript">
+function log(str) {
+            $('#result').text($('#result').text() + " " + str);
+        }
+
+        function invokeCSCode() {
+            try {
+                console.log("Sending Data:");
+                invokeCSharpAction();
+            }
+            catch (err) {
+                log(err);
+            }
+        }</script>
+</body>
+</html>
