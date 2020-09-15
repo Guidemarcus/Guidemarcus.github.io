@@ -6,19 +6,15 @@
 </head>
 <body>
     <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <h1>HybridWebView Test</h1>
+    <h1>Chat Test</h1>
     <br />
-    Enter name: <input type="text" id="name">
+    Enter message: <input type="text" id="name">
     <br />
     <br />
     <button type="button" onclick="javascript: invokeCSCode($('#name').val());">Invoke C# Code</button>
     <br />
-    <br />
-    <button type="button" onclick="javascript: Navigation();">Navigate</button>
-    <br />
-    <p id="result">Result:</p>
+    <p id="result">Message:</p>
     <p id="resultShown">waiting</p>
-    <p id="resultNavigation">navigation waiting</p>
     <script type="text/javascript">
 
         function invokeCSCode(data) {
@@ -26,16 +22,6 @@
                 console.log("Sending Data:");
                 document.getElementById("resultShown").innerHTML = "Success! " + data;
                 invokeCSharpAction(data);
-            }
-            catch (err) {
-                console.log(err);
-            }
-        }
-
-        function Navigation() {
-            try {
-                document.getElementById("resultNavigation").innerHTML = "Navigation Success!";
-                window.location.href = 'From.html';
             }
             catch (err) {
                 console.log(err);
